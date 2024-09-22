@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gran sorteo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="page-title">Gran sorteo humanitario de 1 millón de pesos</h1>
+    <div id="matriz-container"></div>
+
+    <!-- Formulario Modal -->
+    <div id="form-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+    
+            <!-- Sección del formulario para seleccionar un número -->
+            <form id="user-form">
+                <h2>Escoge tu número: <span id="selected-number"></span></h2>
+                <label for="name">Nombres completos:</label>
+                <input type="text" id="name" required>
+    
+                <label for="id-number">Número de identificación:</label>
+                <input type="text" id="id-number" required>
+    
+                <label for="phone">Número de celular:</label>
+                <input type="text" id="phone" required>
+    
+                <label for="payment">Pago:</label>
+                <input type="radio" id="full-payment" name="payment" value="completo" required>
+                <label id="pagoc" for="full-payment">Pago completo</label>
+                <input type="radio" id="partial-payment" name="payment" value="parcial">
+                <label id="pagop" for="partial-payment">Pago parcial</label>
+    
+                <label for="observations">Observaciones:</label>
+                <textarea id="observations" rows="3"></textarea>
+    
+                <button type="submit">Guardar</button>
+            </form>
+    
+            <!-- Sección para mostrar la información del jugador que reservó el número -->
+            <div id="reserved-info" style="display: none;">
+                <h2>Número <span id="reserved-number"></span> ya reservado</h2>
+                <p><strong>Nombre:</strong> <span id="reserved-name"></span></p>
+                <p><strong>Número de Identificación:</strong> <span id="reserved-id"></span></p>
+                <p><strong>Teléfono:</strong> <span id="reserved-phone"></span></p>
+                <p><strong>Pago:</strong> <span id="reserved-payment"></span></p>
+                <p><strong>Observaciones:</strong> <span id="reserved-observations"></span></p>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+
+    <button id="export-csv">Exportar Datos (CSV)</button>
+    <button id="reset-matrix">Resetear Matriz</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
